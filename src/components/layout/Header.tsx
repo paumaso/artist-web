@@ -5,6 +5,10 @@ import { artista } from "../../data/artista";
 import { getCategoriasOrdenadas } from "../../data/categorias";
 import MobileMenu from "../ui/MobileMenu";
 
+// Imports de logos
+import logoBlack from "../../assets/logo-black.png";
+import logoWhite from "../../assets/logo-white.png";
+
 type Props = {
   pathname: string;
 };
@@ -45,6 +49,9 @@ export default function Header({ pathname }: Props) {
 
   const headerSolid = !isHome || scrolled;
 
+  // Seleccionar logo según estado
+  const logoSrc = headerSolid ? logoBlack : logoWhite;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ease-out
@@ -57,18 +64,13 @@ export default function Header({ pathname }: Props) {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex items-center justify-between h-20 md:h-24">
 
-          {/* BRAND */}
-          <a href="/" className="group flex flex-col z-50 relative">
-            <span className={`font-serif text-xl md:text-2xl tracking-tight transition-colors
-              ${headerSolid ? "text-stone-900 group-hover:text-stone-600" : "text-white group-hover:text-white/70"}
-            `}>
-              {artista.nombre}
-            </span>
-            <span className={`font-sans text-[10px] tracking-[0.5em] uppercase -mt-0.5 transition-colors
-              ${headerSolid ? "text-stone-400 group-hover:text-stone-500" : "text-white/60 group-hover:text-white/80"}
-            `}>
-              {artista.apellido || "Artista"}
-            </span>
+          {/* LOGO en lugar de texto */}
+          <a href="/" className="group z-50 relative">
+            <img 
+              src={logoSrc.src} 
+              alt={artista.fullName}
+              className="h-10 md:h-12 w-auto transition-opacity duration-300 group-hover:opacity-70"
+            />
           </a>
 
           {/* NAV DESKTOP */}
@@ -104,7 +106,7 @@ export default function Header({ pathname }: Props) {
             </div>
 
             <Navigation href="/proyectos" label="Proyectos" isActive={isActive("/proyectos")} isHome={!headerSolid} />
-            <Navigation href="/biografia" label="Biografia" isActive={isActive("/biografia")} isHome={!headerSolid} />
+            <Navigation href="/biografia" label="Biografía" isActive={isActive("/biografia")} isHome={!headerSolid} />
             <Navigation href="/contacto" label="Contacto" isActive={isActive("/contacto")} isHome={!headerSolid} />
           </nav>
 

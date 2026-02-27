@@ -9,7 +9,7 @@ export default function CategoriasSection({ categorias }: Props) {
     <section className="bg-stone-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 lg:px-16 py-8 md:py-12">
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
 
           {categorias.map((cat, index) => (
             <a
@@ -40,11 +40,6 @@ export default function CategoriasSection({ categorias }: Props) {
                     <h2 className="font-serif text-xl md:text-2xl text-white leading-tight mb-1">
                       {cat.nombre}
                     </h2>
-
-                    {/* Descripción breve en móvil */}
-                    <p className="text-white/70 text-xs font-light leading-relaxed mb-3 line-clamp-2 md:hidden">
-                      {cat.descripcion}
-                    </p>
 
                     <span className="inline-flex items-center gap-1 text-[10px] md:text-[11px] uppercase tracking-[0.18em] text-white/80">
                       Ver obras 

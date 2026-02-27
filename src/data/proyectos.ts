@@ -1,7 +1,6 @@
 import type { Proyecto } from "./types";
 
 import conColorYForma from "../assets/images/proyectos/con-color-y-forma.jpg"
-import deseos from "../assets/images/proyectos/deseos.jpg"
 import taller3 from "../assets/images/proyectos/taller-creacio-3.jpg"
 
 export const proyectos: Proyecto[] = [
@@ -35,21 +34,6 @@ convierto en un juego de formas y colores.`,
     destacado: false,
   },
   {
-    id: "deseos",
-    slug: "deseos",
-    titulo: "Deseos.",
-    descripcion: `Les següents pintures mostren els meus desitjos més recents, tenir un control del temps. 
-El temps és una cosa inevitable i incontrolable, no podem jugar a ser Déu, i és per això que al final, la frustració ens acaba consumint. No tenir el control de les coses és un fet que l’ésser humà, la majoria de vegades, no pot suportar bé, encara que es pot aprendre des de l’imprevist i no caure en el descontrol.
-El descontrol és quan no hi ha cap mena de control, la frustració i la desesperació s'apoderen del cos humà i el fan arribar al seu límit. En aquesta sèrie d’obres s’il·lustra el desesperat desig de poder manipular el temps un cop ja l’ésser humà arriba al seu límit.
-
-Durant el procés de creació he pogut sentir aquest descontrol, però a la vegada he après a aprendre dels imprevistos i de no fer tot d’una manera exactament perfecta. Irònicament, el fet d’utilitzar pintura a l’oli per fer les pintures ha fet que hagués de prendre més temps encara perquè la pintura s'assequés, i això va fer que al principi m’amoïnes pel fet que potser no s’assecaven a temps. Més tard vaig adonar-me que si la pintura no s’assecava o alguna pinzellada no sortia com tenia planejada, no era cap problema, ja que era inevitable i incontrolable.
-`,
-    año: 2023,
-    obras: ["deseos-1", "deseos-2", "deseos-3"],
-    imagenPortada: deseos,
-    destacado: false,
-  },
-  {
     id: "taller-creacio-3",
     slug: "taller-creacio-3",
     titulo: "Taller de Creació III.",
@@ -64,9 +48,12 @@ export const getProyectoBySlug = (slug: string): Proyecto | undefined =>
   proyectos.find((p) => p.slug === slug);
 
 export const getProyectosDestacados = (): Proyecto[] =>
-  proyectos.filter((p) => p.destacado);
+  proyectos
+    .filter(p => p.destacado)
+    .sort((a, b) => b.año - a.año);
 
-export const getAllProyectos = (): Proyecto[] => proyectos;
+export const getAllProyectos = (): Proyecto[] =>
+  [...proyectos].sort((a, b) => b.año - a.año);
 
 export const getObrasDeProyecto = (
   proyecto: Proyecto,

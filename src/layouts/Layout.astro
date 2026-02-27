@@ -54,7 +54,7 @@ const {
     <ViewTransitions fallback="swap" />
   </head>
   <body class="min-h-screen flex flex-col bg-stone-50 text-stone-800">
-    <Header pathname={Astro.url.pathname} />
+    <Header client:load pathname={Astro.url.pathname} />
     
     <main class="grow relative" transition:animate="fade">
       <slot />

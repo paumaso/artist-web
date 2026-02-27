@@ -23,7 +23,7 @@ export default function ObraPage({ obra }: Props) {
         <div className="w-[35%] max-w-md">
           <div className="border border-stone-300 p-10 bg-white/80 backdrop-blur-sm">
             
-            <h1 className="font-serif text-3xl lg:text-4xl text-stone-900 leading-tight mb-2">
+            <h1 className="font-serif italic text-3xl lg:text-4xl text-stone-900 leading-tight mb-2">
               {obra.titulo}
             </h1>
 

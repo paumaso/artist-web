@@ -27,7 +27,7 @@ export const categorias: Categoria[] = [
   {
     id: "otros",
     slug: "otros",
-    nombre: "Instalaciones o varios",
+    nombre: "Varios",
     descripcion: "Objetos lúdicos y piezas escultóricas de pequeño formato. La infancia revisitada desde la ironía contemporánea.",
     imagenDestacada: otrosImg,
     orden: 3,

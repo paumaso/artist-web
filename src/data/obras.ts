@@ -24,20 +24,83 @@ import mouton from "../assets/images/obras/pinturas/mouton.jpg"
 import paisajeNocturno from "../assets/images/obras/colages/paisaje-nocturno.jpg"
 import laFlor from "../assets/images/obras/pinturas/la-flor.jpg"
 import laFlor1 from "../assets/images/obras/pinturas/la-flor.1.jpg"
-
 import principeDelBosque from "../assets/images/obras/pinturas/el-gran-principe-del-bosque.jpg"
 import principeDelBosque1 from "../assets/images/obras/pinturas/el-gran-principe-del-bosque.1.jpg"
-
 import juegoPiezas from "../assets/images/obras/otros/juego-de-piezas.jpg"
 import juegoPiezas1 from "../assets/images/obras/otros/juego-de-piezas.1.jpg"
 import caracol from "../assets/images/obras/pinturas/caracol.jpg"
-
 import deseos1 from "../assets/images/obras/pinturas/deseos1.jpg"
 import deseos2 from "../assets/images/obras/pinturas/deseos2.jpg"
 import deseos3 from "../assets/images/obras/pinturas/deseos3.jpg"
-
+import entretenimientoTapa from "../assets/images/obras/otros/entretenimiento-y-tapa.jpg"
 
 export const obras: Obra[] = [
+  {
+    id: "mañana-sera-un-gran-dia",
+    slug: "mañana-sera-un-gran-dia",
+    titulo: "Mañana será un gran día",
+    categoriaId: "colages",
+    categoriaSlug: "colages",
+    año: 2025,
+    tecnica: "Collage, papeles pintados al óleo",
+    dimensiones: "20,5 x 27,5 cm",
+    descripcion: "Reinterpretación de juguetes industriales desechados. La cerámica interviene para crear nuevas narrativas sobre la obsolescencia.",
+    imagenes: [mañanaSeraUnGranDia],
+    imagenPrincipal: mañanaSeraUnGranDia,
+    destacada: false,
+    disponible: true,
+    materiales: ["Papel", "Óleo"],
+    ubicacion: "Estudio Barcelona"
+  },
+  {
+    id: "paseo-nocturno",
+    slug: "paseo-nocturno",
+    titulo: "Paseo nocturno",
+    categoriaId: "colages",
+    categoriaSlug: "colages",
+    año: 2025,
+    tecnica: "Pintura al óleo",
+    dimensiones: "54,1 x 45,1 x 1,6 cm",
+    imagenes: [paseoNocturno],
+    imagenPrincipal: paseoNocturno,
+    destacada: false,
+    disponible: true,
+    materiales: ["Madera"],
+    ubicacion: "Estudio Barcelona"
+  },
+  {
+    id: "radiografia-de-la-habitacion",
+    slug: "radiografia-de-la-habitacion",
+    titulo: "Radiografía de la habitación",
+    categoriaId: "colages",
+    categoriaSlug: "colages",
+    año: 2025,
+    tecnica: "Collage, cartón",
+    dimensiones: "75 x 55,7 cm",
+    descripcion: "Reinterpretación de juguetes industriales desechados. La cerámica interviene para crear nuevas narrativas sobre la obsolescencia.",
+    imagenes: [radiografiaDeLaHabitacion, radiografiaDeLaHabitacion1],
+    imagenPrincipal: radiografiaDeLaHabitacion,
+    destacada: false,
+    disponible: true,
+    materiales: ["Cartón"],
+    ubicacion: "Estudio Barcelona"
+  },
+  {
+    id: "la-caceria",
+    slug: "la-caceria",
+    titulo: "La cacería",
+    categoriaId: "colages",
+    categoriaSlug: "colages",
+    año: 2026,
+    tecnica: "Collage",
+    dimensiones: "80 x 60 cm",
+    imagenes: [laCaceria],
+    imagenPrincipal: laCaceria,
+    destacada: true,
+    disponible: true,
+    materiales: ["Papel fotográfico", "Encaje", "Pigmentos", "Madera"],
+    ubicacion: "Estudio Barcelona"
+  },
   {
     id: "cobarde",
     slug: "cobarde",
@@ -55,85 +118,19 @@ export const obras: Obra[] = [
     ubicacion: "Estudio Barcelona"
   },
   {
-    id: "la-caceria",
-    slug: "la-caceria",
-    titulo: "La caceria",
-    categoriaId: "colages",
-    categoriaSlug: "colages",
-    año: 2026,
-    tecnica: "Collage",
-    dimensiones: "80 x 60 cm",
-    imagenes: [laCaceria],
-    imagenPrincipal: laCaceria,
-    destacada: true,
-    disponible: true,
-    materiales: ["Papel fotográfico", "Encaje", "Pigmentos", "Madera"],
-    ubicacion: "Estudio Barcelona"
-  },
-  {
-    id: "paseo-nocturno",
-    slug: "paseo-nocturno",
-    titulo: "Paseo nocturno",
-    categoriaId: "colages",
-    categoriaSlug: "colages",
-    año: 2025,
-    tecnica: "Pintura al óleo",
-    dimensiones: "54,1x 45,1 x 1,6 cm.",
-    imagenes: [paseoNocturno],
-    imagenPrincipal: paseoNocturno,
-    destacada: false,
-    disponible: true,
-    materiales: ["Madera"],
-    ubicacion: "Estudio Barcelona"
-  },
-  {
-    id: "mañana-sera-un-gran-dia",
-    slug: "mañana-sera-un-gran-dia",
-    titulo: "Mañana será un gran día",
-    categoriaId: "colages",
-    categoriaSlug: "colages",
-    año: 2025,
-    tecnica: "Collage, papeles pintados al óleo",
-    dimensiones: " 20,5 x 27,5 cm",
-    descripcion: "Reinterpretación de juguetes industriales desechados. La cerámica interviene para crear nuevas narrativas sobre la obsolescencia.",
-    imagenes: [mañanaSeraUnGranDia],
-    imagenPrincipal: mañanaSeraUnGranDia,
-    destacada: false,
-    disponible: true,
-    materiales: ["Papel", "Oleó"],
-    ubicacion: "Estudio Barcelona"
-  },
-  {
-    id: "radiografia-de-la-habitacion",
-    slug: "radiografia-de-la-habitacion",
-    titulo: "Radiografía de la habitación",
-    categoriaId: "colages",
-    categoriaSlug: "colages",
-    año: 2025,
-    tecnica: "Collage, carton",
-    dimensiones: "75 x 55,7 cm.",
-    descripcion: "Reinterpretación de juguetes industriales desechados. La cerámica interviene para crear nuevas narrativas sobre la obsolescencia.",
-    imagenes: [radiografiaDeLaHabitacion, radiografiaDeLaHabitacion1],
-    imagenPrincipal: radiografiaDeLaHabitacion,
-    destacada: false,
-    disponible: true,
-    materiales: ["Carton"],
-    ubicacion: "Estudio Barcelona"
-  },
-  {
     id: "veo-veo",
     slug: "veo-veo",
-    titulo: "Veo Veo",
+    titulo: "Veo, veo",
     categoriaId: "colages",
     categoriaSlug: "colages",
     año: 2025,
-    tecnica: "Collage y pintura al oleo",
-    dimensiones: "98 x 79cm.",
+    tecnica: "Collage y pintura al óleo",
+    dimensiones: "98 x 79 cm",
     imagenes: [veoVeo],
     imagenPrincipal: veoVeo,
     destacada: false,
     disponible: true,
-    materiales: ["Carton"],
+    materiales: ["Cartón"],
     ubicacion: "Estudio Barcelona"
   },
   {
@@ -144,12 +141,28 @@ export const obras: Obra[] = [
     categoriaSlug: "otros",
     año: 2026,
     tecnica: "Móvil de papeles pintados y alambre",
-    dimensiones: "98 x 79cm.",
+    dimensiones: "98 x 79 cm",
     imagenes: [oleajeMetrosDeProfundidad],
     imagenPrincipal: oleajeMetrosDeProfundidad,
     destacada: false,
     disponible: true,
     materiales: ["Alambre", "Papel"],
+    ubicacion: "Estudio Barcelona"
+  },
+  {
+    id: "entretenimiento-y-tapa",
+    slug: "entretenimiento-y-tapa",
+    titulo: "Entretenimiento y Tapa",
+    categoriaId: "otros",
+    categoriaSlug: "otros",
+    año: 2026,
+    tecnica: "Cuñas de bastidores y tapa con restos de pintura.",
+    dimensiones: "Medidas variables",
+    imagenes: [entretenimientoTapa],
+    imagenPrincipal: entretenimientoTapa,
+    destacada: false,
+    disponible: true,
+    materiales: ["Tapa", "Cuñas"],
     ubicacion: "Estudio Barcelona"
   },
   {
@@ -160,7 +173,7 @@ export const obras: Obra[] = [
     categoriaSlug: "otros",
     año: 2026,
     tecnica: "Móvil de papeles pintados y alambre",
-    dimensiones: "Medidas variables.",
+    dimensiones: "Medidas variables",
     imagenes: [montpedros],
     imagenPrincipal: montpedros,
     destacada: false,
@@ -176,7 +189,7 @@ export const obras: Obra[] = [
     categoriaSlug: "otros",
     año: 2026,
     tecnica: "Móvil de papeles pintados y alambre",
-    dimensiones: "Medidas variables.",
+    dimensiones: "Medidas variables",
     imagenes: [allaDondeVoyMePersiguen],
     imagenPrincipal: allaDondeVoyMePersiguen,
     destacada: false,
@@ -192,7 +205,7 @@ export const obras: Obra[] = [
     categoriaSlug: "colages",
     año: 2025,
     tecnica: "Collage, papeles pintados al óleo",
-    dimensiones: "42 x 29.7 cm",
+    dimensiones: "42 x 29,7 cm",
     imagenes: [febrero],
     imagenPrincipal: febrero,
     destacada: false,
@@ -207,7 +220,7 @@ export const obras: Obra[] = [
     categoriaId: "pinturas",
     categoriaSlug: "pinturas",
     año: 2025,
-    tecnica: "Temple de huevo.",
+    tecnica: "Temple de huevo",
     dimensiones: "41 x 33 cm",
     imagenes: [gallo],
     imagenPrincipal: gallo,
@@ -223,7 +236,7 @@ export const obras: Obra[] = [
     categoriaId: "colages",
     categoriaSlug: "colages",
     año: 2025,
-    tecnica: "Collage y pintura al óleo.",
+    tecnica: "Collage y pintura al óleo",
     dimensiones: "30 x 40 cm",
     imagenes: [puerto],
     imagenPrincipal: puerto,
@@ -239,29 +252,13 @@ export const obras: Obra[] = [
     categoriaId: "pinturas",
     categoriaSlug: "pinturas",
     año: 2025,
-    tecnica: "Pintura al óleo.",
+    tecnica: "Pintura al óleo",
     dimensiones: "30 x 20 cm",
     imagenes: [ciervo],
     imagenPrincipal: ciervo,
     destacada: false,
     disponible: true,
-    materiales: ["Carton"],
-    ubicacion: "Estudio Barcelona"
-  },
-  {
-    id: "mouton",
-    slug: "mouton",
-    titulo: "Mouton",
-    categoriaId: "pinturas",
-    categoriaSlug: "pinturas",
-    año: 2025,
-    tecnica: "Pintura al óleo.",
-    dimensiones: "27 x 11 cm",
-    imagenes: [mouton],
-    imagenPrincipal: mouton,
-    destacada: false,
-    disponible: true,
-    materiales: ["Tela"],
+    materiales: ["Cartón"],
     ubicacion: "Estudio Barcelona"
   },
   {
@@ -271,13 +268,13 @@ export const obras: Obra[] = [
     categoriaId: "colages",
     categoriaSlug: "colages",
     año: 2025,
-    tecnica: "Colage.",
+    tecnica: "Collage",
     dimensiones: "27 x 11 cm",
     imagenes: [paisajeNocturno],
     imagenPrincipal: paisajeNocturno,
     destacada: false,
     disponible: true,
-    materiales: ["Carton", "Marco"],
+    materiales: ["Cartón", "Marco"],
     ubicacion: "Estudio Barcelona"
   },
   {
@@ -287,8 +284,8 @@ export const obras: Obra[] = [
     categoriaId: "otros",
     categoriaSlug: "otros",
     año: 2025,
-    tecnica: "Arcilla y alambre pintado al óleo.",
-    dimensiones: "Medidas varias.",
+    tecnica: "Arcilla y alambre pintado al óleo",
+    dimensiones: "Medidas variables",
     imagenes: [juegoPiezas, juegoPiezas1],
     imagenPrincipal: juegoPiezas,
     destacada: false,
@@ -299,12 +296,12 @@ export const obras: Obra[] = [
   {
     id: "el-gran-principe-del-bosque",
     slug: "el-gran-principe-del-bosque",
-    titulo: "El Gran Príncipe del bosque",
+    titulo: "El gran príncipe del bosque",
     categoriaId: "pinturas",
     categoriaSlug: "pinturas",
     año: 2025,
     tecnica: "Acrílico, óleo y pintura vinílica",
-    dimensiones: "Medidas varias.",
+    dimensiones: "Medidas variables",
     imagenes: [principeDelBosque, principeDelBosque1],
     imagenPrincipal: principeDelBosque,
     destacada: false,
@@ -335,13 +332,62 @@ export const obras: Obra[] = [
     categoriaId: "otros",
     categoriaSlug: "otros",
     año: 2025,
-    tecnica: "Madera recortada y pintada al óleo.",
-    dimensiones: "23,5 x 23,5 cm x 1 cm (marco).",
+    tecnica: "Madera recortada y pintada al óleo",
+    dimensiones: "23,5 x 23,5 x 1 cm (marco)",
     imagenes: [puzzlePaisaje, puzzlePaisaje1, puzzlePaisaje2],
     imagenPrincipal: puzzlePaisaje,
     destacada: false,
     disponible: true,
     materiales: ["Madera"],
+    ubicacion: "Estudio Barcelona"
+  },
+  
+  {
+    id: "lesterjr",
+    slug: "lesterjr",
+    titulo: "Lester",
+    categoriaId: "otros",
+    categoriaSlug: "otros",
+    año: 2025,
+    tecnica: "Cartón y plástico pintado",
+    dimensiones: "52,8 x 20 x 30 cm",
+    imagenes: [lesterJr, lesterJr1],
+    imagenPrincipal: lesterJr,
+    destacada: false,
+    disponible: true,
+    materiales: ["Cartón", "Plástico"],
+    ubicacion: "Estudio Barcelona"
+  },
+  {
+    id: "caracol",
+    slug: "caracol",
+    titulo: "S/T",
+    categoriaId: "pinturas",
+    categoriaSlug: "pinturas",
+    año: 2025,
+    tecnica: "Pintura al óleo y cera",
+    dimensiones: "100 x 81 cm",
+    imagenes: [caracol],
+    imagenPrincipal: caracol,
+    destacada: false,
+    disponible: true,
+    materiales: ["Madera"],
+    ubicacion: "Estudio Barcelona"
+  },
+  {
+    id: "pedralbes",
+    slug: "pedralbes",
+    titulo: "Pedralbes",
+    categoriaId: "pinturas",
+    categoriaSlug: "pinturas",
+    año: 2025,
+    tecnica: "Pintura al óleo",
+    dimensiones: "35 x 25 x 40 cm",
+    imagenes: [pedralbes],
+    imagenPrincipal: pedralbes,
+    destacada: false,
+    disponible: true,
+    materiales: ["Óleo"],
     ubicacion: "Estudio Barcelona"
   },
   {
@@ -351,7 +397,7 @@ export const obras: Obra[] = [
     categoriaId: "pinturas",
     categoriaSlug: "pinturas",
     año: 2023,
-    tecnica: "Pintura al óleo.",
+    tecnica: "Pintura al óleo",
     dimensiones: "24 x 30 cm",
     imagenes: [deseos1],
     imagenPrincipal: deseos1,
@@ -367,7 +413,7 @@ export const obras: Obra[] = [
     categoriaId: "pinturas",
     categoriaSlug: "pinturas",
     año: 2023,
-    tecnica: "Pintura al óleo.",
+    tecnica: "Pintura al óleo",
     dimensiones: "24 x 30 cm",
     imagenes: [deseos2],
     imagenPrincipal: deseos2,
@@ -377,45 +423,13 @@ export const obras: Obra[] = [
     ubicacion: "Estudio Barcelona"
   },
   {
-    id: "lesterjr",
-    slug: "lesterjr",
-    titulo: "Lester",
-    categoriaId: "otros",
-    categoriaSlug: "otros",
-    año: 2025,
-    tecnica: "Cartón y plástico pintado",
-    dimensiones: "52,8 x 20 x 30 cm",
-    imagenes: [lesterJr, lesterJr1],
-    imagenPrincipal: lesterJr,
-    destacada: false,
-    disponible: true,
-    materiales: ["Carton", "Plastico"],
-    ubicacion: "Estudio Barcelona"
-  },
-{
-    id: "caracol",
-    slug: "caracol",
-    titulo: "S/T",
-    categoriaId: "pinturas",
-    categoriaSlug: "pinturas",
-    año: 2025,
-    tecnica: "Pintura al óleo y cera ",
-    dimensiones: "100 x 81 cm",
-    imagenes: [caracol],
-    imagenPrincipal: caracol,
-    destacada: false,
-    disponible: true,
-    materiales: ["Madera"],
-    ubicacion: "Estudio Barcelona"
-  },
-  {
     id: "deseos-3",
     slug: "deseos-3",
     titulo: "S/T",
     categoriaId: "pinturas",
     categoriaSlug: "pinturas",
     año: 2023,
-    tecnica: "Pintura al óleo.",
+    tecnica: "Pintura al óleo",
     dimensiones: "40 x 50 cm",
     imagenes: [deseos3],
     imagenPrincipal: deseos3,
@@ -424,34 +438,26 @@ export const obras: Obra[] = [
     materiales: ["Lienzo"],
     ubicacion: "Estudio Barcelona"
   },
-  {
-    id: "pedralbes",
-    slug: "pedralbes",
-    titulo: "Pedralbes",
-    categoriaId: "pinturas",
-    categoriaSlug: "pinturas",
-    año: 2025,
-    tecnica: "Pintura al Oleo",
-    dimensiones: "35 x 25 x 40 cm",
-    imagenes: [pedralbes],
-    imagenPrincipal: pedralbes,
-    destacada: false,
-    disponible: true,
-    materiales: ["Oleó"],
-    ubicacion: "Estudio Barcelona"
-  }
 ];
 
 export const getObrasByCategoria = (categoriaSlug: string): Obra[] =>
-  obras.filter(o => o.categoriaSlug === categoriaSlug);
+  obras
+    .filter(o => o.categoriaSlug === categoriaSlug)
+    .sort((a, b) => b.año - a.año);
 
 export const getObraBySlug = (slug: string): Obra | undefined =>
   obras.find(o => o.slug === slug);
 
 export const getObrasDestacadas = (): Obra[] =>
-  obras.filter(o => o.destacada);
+  obras
+    .filter(o => o.destacada)
+    .sort((a, b) => b.año - a.año);
 
 export const getObrasForCarousel = (): Obra[] =>
-  obras.filter(o => o.destacada).slice(0, 5);
+  obras
+    .filter(o => o.destacada)
+    .sort((a, b) => b.año - a.año)
+    .slice(0, 5);
 
-export const getAllObras = (): Obra[] => obras;
+export const getAllObras = (): Obra[] =>
+  [...obras].sort((a, b) => b.año - a.año);

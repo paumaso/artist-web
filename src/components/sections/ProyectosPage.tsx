@@ -38,7 +38,7 @@ export default function ProyectosPage({ proyectos }: Props) {
 
               {/* Contenido compacto */}
               <div className="p-4">
-                <h2 className="font-serif text-lg text-stone-900 leading-tight mb-2 group-hover:text-stone-600 transition-colors line-clamp-1">
+                <h2 className="font-serif italic text-lg text-stone-900 leading-tight mb-2 group-hover:text-stone-600 transition-colors line-clamp-1">
                   {proyecto.titulo}
                 </h2>
 

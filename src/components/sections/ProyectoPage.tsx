@@ -1,8 +1,6 @@
-import { useState, useRef } from "react";
 import type { Proyecto, Obra } from "../../data/types";
 import FichaItem from "../ui/FichaItem";
 import BackButton from "../ui/BackButton";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   proyecto: Proyecto;
@@ -10,105 +8,65 @@ interface Props {
 }
 
 export default function ProyectoPage({ proyecto, obras }: Props) {
-  const [obraActiva, setObraActiva] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const obraActual = obras[obraActiva];
-  const totalObras = obras.length;
-
-  const scrollToObra = (index: number) => {
-    setObraActiva(index);
-    const container = scrollRef.current;
-    if (!container) return;
-    
-    const obraElements = container.children;
-    if (obraElements[index]) {
-      obraElements[index].scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   return (
     <section className="bg-stone-50 min-h-screen">
-      
       {/* Header del proyecto */}
       <div className="bg-stone-100 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-28 md:pt-32 pb-6 md:pb-8">
-          
-          {/* Fila superior: Meta + Volver alineados */}
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-xs uppercase tracking-[0.2em] text-stone-500">
-              Proyecto {proyecto.año}
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-28 md:pt-32 pb-16">
+          <div className="flex items-center justify-between mb-8">
+            <span className="text-sm font-medium uppercase tracking-[0.2em] text-stone-500">
             </span>
-            <BackButton href="/proyectos" label="Volver a proyectos" />
+            <BackButton href="/proyectos" label="Volver" />
           </div>
 
-          {/* Título */}
-          <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl text-stone-900 mb-6">
+          <h1 className="font-serif italic text-4xl md:text-6xl lg:text-7xl text-stone-900 mb-8 max-w-4xl">
             {proyecto.titulo}
           </h1>
 
-          {/* Descripción a ancho completo */}
-          <p className="text-stone-600 font-light leading-relaxed max-w-none text-base md:text-lg">
+          <p className="text-stone-600 font-light leading-relaxed max-w-2xl text-lg md:text-xl">
             {proyecto.descripcion}
           </p>
-
         </div>
       </div>
 
-      {/* Contenido scrollable */}
-      <div ref={scrollRef} className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-8 space-y-24 md:space-y-32">
-        {obras.map((obra, index) => (
-          <article
-            key={obra.id}
-            id={`obra-${index}`}
-            className="scroll-mt-48"
-            data-index={index}
+      {/* Grid de obras: Imagen Izquierda / Texto Derecha */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-20 space-y-32">
+        {obras.map((obra) => (
+          <a 
+            key={obra.id} 
+            href={`/obra/${obra.slug}`}
+            className="block group"
           >
-            {/* Layout obra individual */}
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+            {/* Aquí definimos el orden: Imagen primero (izquierda), Info después (derecha) */}
+            <article className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
               
-              {/* Galería de imágenes */}
-              <div className="space-y-4">
-                {obra.imagenes.map((img, imgIndex) => (
-                  <div key={imgIndex} className="bg-stone-100">
-                    <img
-                      src={img.src}
-                      alt={`${obra.titulo} - ${imgIndex + 1}`}
-                      className="w-full h-auto object-contain max-h-[80vh]"
-                      loading={index === 0 ? "eager" : "lazy"}
-                    />
+              {/* Imagen - Izquierda */}
+              <div className="lg:col-span-7 bg-stone-200 overflow-hidden shadow-lg transition-shadow duration-500 group-hover:shadow-xl">
+                <img
+                  src={obra.imagenPrincipal.src}
+                  alt={obra.titulo}
+                  className="w-full h-auto  transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Info - Derecha */}
+              <div className="lg:col-span-5 flex flex-col justify-top h-full pt-4">
+                <h2 className="font-serif italic text-3xl md:text-4xl text-stone-900 mb-6 transition-colors duration-300 group-hover:text-stone-600">
+                  {obra.titulo}
+                </h2>
+
+                <div className="border-t border-stone-300 pt-6 space-y-4">
+                  <div className="text-lg text-stone-700 space-y-2">
+                    <FichaItem label="Año" value={obra.año} />
+                    <FichaItem label="Técnica" value={obra.tecnica} />
+                    <FichaItem label="Dimensiones" value={obra.dimensiones} />
                   </div>
-                ))}
-              </div>
-
-              {/* Info de la obra - Sticky */}
-              <div className="lg:sticky lg:top-64 space-y-8">
-                <div>
-                  <span className="text-xs uppercase tracking-[0.2em] text-stone-400 mb-2 block">
-                    Obra {index + 1} / {totalObras}
-                  </span>
-                  <h2 className="font-serif text-2xl md:text-3xl text-stone-900 mb-2">
-                    {obra.titulo}
-                  </h2>
                 </div>
-
-                <div className="border-t border-stone-200 pt-6 space-y-4">
-                  <FichaItem label="Año" value={obra.año} />
-                  <FichaItem label="Técnica" value={obra.tecnica} />
-                  <FichaItem label="Dimensiones" value={obra.dimensiones} />
-                </div>
-
-                {obra.descripcion && (
-                  <p className="text-stone-600 font-light leading-relaxed border-t border-stone-200 pt-6">
-                    {obra.descripcion}
-                  </p>
-                )}
               </div>
-            </div>
-          </article>
+            </article>
+          </a>
         ))}
       </div>
-
     </section>
   );
 }
