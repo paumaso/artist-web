@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/ui/PageHero.tsx";
+import CategoriaSection from "../../components/sections/CategoriaSection";
+import type { Obra } from "../../data/types";
+import { getObrasByCategoria } from "../../data/obras";
+import { categorias } from "../../data/categorias";
+
+export async function getStaticPaths() {
+  return categorias.map((c) => ({
+    params: { slug: c.slug },
+    props: { categoria: c }
+  }));
+}
+
+const { categoria } = Astro.props;
+
+if (!categoria) throw new Error("Categoría no encontrada");
+
+const obras: Obra[] = getObrasByCategoria(categoria.slug);
+
+const title = `${categoria.nombre} | Leyre Bernuz Vera`;
+---
+
+<Layout title={title}>
+<PageHero
+    title={categoria.nombre}
+    description={categoria.descripcion}
+    backHref="/categorias"
+  />
+
+  <CategoriaSection obras={obras} client:load/>
+</Layout>

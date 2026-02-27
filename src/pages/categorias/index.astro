@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/ui/PageHero.tsx";
+import CategoriasSection from "../../components/sections/CategoriasSection";
+import { getCategoriasOrdenadas } from "../../data/categorias";
+
+const categorias = getCategoriasOrdenadas();
+
+const title = "Categorias | Leyre Bernuz Vera";
+const description =
+  "Explora las categorías de obra de Leyre Bernuz Vera: pinturas, collages, juguetes y obras sobre papel.";
+---
+
+<Layout title={title} description={description} type="website">
+  <PageHero
+    title="Categorias"
+    description="Una selección de trabajos organizados por categorías. Cada serie explora diferentes técnicas, materiales y conceptos dentro de la práctica artística contemporánea."
+    backHref="/"
+  />
+
+  <CategoriasSection categorias={categorias} client:load/>
+</Layout>

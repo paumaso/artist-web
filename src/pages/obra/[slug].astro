@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/ui/PageHero";
+import ObraPage from "../../components/sections/ObraPage";
+import { getAllObras } from "../../data/obras";
+
+export async function getStaticPaths() {
+  const obras = getAllObras();
+
+  return obras.map((obra) => ({
+    params: { slug: obra.slug },
+    props: { obra },
+  }));
+}
+
+const { obra } = Astro.props;
+const title = obra.titulo + "| Leyre Bernuz Vera"
+---
+
+<Layout title={title}>
+  <ObraPage obra={obra} client:load />
+</Layout>

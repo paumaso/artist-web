@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BiografiaPage from "../components/sections/BiografiaPage";
+
+import { artista } from "../data/artista";
+
+const title = `Biografía | ${artista.fullName}`;
+---
+
+<Layout title={title} description={artista.bio}>
+    <BiografiaPage transition:animate="slide" client:load />
+</Layout>

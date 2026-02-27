@@ -1,0 +1,32 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProyectoPage from "../../components/sections/ProyectoPage";
+import { getAllProyectos, getObrasDeProyecto } from "../../data/proyectos";
+import { getAllObras } from "../../data/obras";
+
+export function getStaticPaths() {
+  const proyectos = getAllProyectos();
+  return proyectos.map((proyecto) => ({
+    params: { slug: proyecto.slug },
+    props: { proyecto },
+  }));
+}
+
+const { proyecto } = Astro.props;
+const todasLasObras = getAllObras();
+const obrasDelProyecto = getObrasDeProyecto(proyecto, todasLasObras);
+
+if (obrasDelProyecto.length === 0) {
+  return Astro.redirect("/404");
+}
+
+const title = `${proyecto.titulo} | Proyectos | Leyre Bernuz Vera`;
+---
+
+<Layout title={title} description={proyecto.descripcion}>
+  <ProyectoPage 
+    proyecto={proyecto} 
+    obras={obrasDelProyecto} 
+    client:load 
+  />
+</Layout>

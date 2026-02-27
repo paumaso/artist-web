@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/sections/Hero';
+import { artista } from '../data/artista';
+
+import carrusel1 from '../assets/images/hero/hero-carrusel-1.jpg'
+import carrusel2 from '../assets/images/hero/hero-carrusel-2.jpg'
+import carrusel3 from '../assets/images/hero/hero-carrusel-3.jpg'
+import carrusel4 from '../assets/images/hero/hero-carrusel-4.jpg'
+
+const imagenesHero = [carrusel1, carrusel2, carrusel3, carrusel4];
+
+const title = artista.nombre;
+const description = artista.bio;
+---
+
+<Layout title={title} description={description} type="website">
+  <Hero client:load/>
+</Layout>

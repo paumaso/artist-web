@@ -1,0 +1,29 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import PageHero from "../../components/ui/PageHero";
+import ProyectosPage from "../../components/sections/ProyectosPage";
+import { getAllProyectos } from "../../data/proyectos";
+import { getAllObras } from "../../data/obras";
+
+const proyectos = getAllProyectos();
+const obras = getAllObras();
+
+// Enriquecer con datos necesarios
+const proyectosData = proyectos.map((p) => ({
+  ...p,
+  cantidadObras: p.obras.length,
+  imagenPreview: p.imagenPortada || obras.find((o) => o.id === p.obras[0])?.imagenPrincipal,
+}));
+---
+
+<Layout 
+  title="Proyectos | Leyre Bernuz Vera"
+  description="Series temáticas y proyectos artísticos"
+>
+  <PageHero
+    title="Proyectos"
+    backHref="/"
+  />
+
+  <ProyectosPage proyectos={proyectosData} client:load />
+</Layout>
