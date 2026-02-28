@@ -64,13 +64,13 @@ export interface Obra {
   categoriaSlug: string;
   año: number;
   tecnica: string;
+  soporte?: string;
   dimensiones: string;
   descripcion?: string;
   imagenes: (ImageMetadata)[];
   imagenPrincipal: ImageMetadata;
   destacada: boolean;
   disponible: boolean;
-  precio?: string; 
   materiales?: string[];
   ubicacion?: string;
 }

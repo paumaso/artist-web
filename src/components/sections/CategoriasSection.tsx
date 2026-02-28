@@ -25,7 +25,7 @@ export default function CategoriasSection({ categorias }: Props) {
                 <img
                   src={cat.imagenDestacada.src}
                   alt={cat.nombre}
-                  loading={index < 4 ? "eager" : "lazy"}
+                  loading="lazy"
                   decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 ease-out md:group-hover:scale-[1.04]"
                 />

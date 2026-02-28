@@ -136,7 +136,7 @@ export const obras: Obra[] = [
   {
     id: "oleaje-a-metros-de-profundidad-puedo-respirar",
     slug: "oleaje-a-metros-de-profundidad-puedo-respirar",
-    titulo: "Oleaje a metros de profundidad puedo respirar",
+    titulo: "A metros de profundidad puedo respirar",
     categoriaId: "otros",
     categoriaSlug: "otros",
     año: 2026,
@@ -388,6 +388,22 @@ export const obras: Obra[] = [
     destacada: false,
     disponible: true,
     materiales: ["Óleo"],
+    ubicacion: "Estudio Barcelona"
+  },
+  {
+    id: "flores",
+    slug: "flores",
+    titulo: "S/T",
+    categoriaId: "sobre-papel",
+    categoriaSlug: "sobre-papel",
+    año: 2025,
+    tecnica: "Tintas metálicas y carbónicas",
+    dimensiones: "35 x 25 cm",
+    imagenes: [pedralbes],
+    imagenPrincipal: pedralbes,
+    destacada: false,
+    disponible: true,
+    materiales: [""],
     ubicacion: "Estudio Barcelona"
   },
   {

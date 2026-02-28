@@ -51,11 +51,14 @@ export default function HeroCarousel({ slides }: Props) {
           >
             <img
               src={slide.imagen.src}
+              width={slide.imagen.width} 
+              height={slide.imagen.height} 
               alt={slide.alt}
               className="w-full h-full object-cover"
+              // Lógica de carga inteligente
               loading={i === 0 ? "eager" : "lazy"}
+              fetchpriority={i === 0 ? "high" : "auto"} 
             />
-            {/* Overlay sutil para legibilidad si hay texto encima */}
             <div className="absolute inset-0 bg-stone-950/30" />
           </div>
         ))}

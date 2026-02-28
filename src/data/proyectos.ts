@@ -2,6 +2,7 @@ import type { Proyecto } from "./types";
 
 import conColorYForma from "../assets/images/proyectos/con-color-y-forma.jpg"
 import taller3 from "../assets/images/proyectos/taller-creacio-3.jpg"
+import tempusFugit from "../assets/images/proyectos/deseos.jpg"
 
 export const proyectos: Proyecto[] = [
   {
@@ -34,14 +35,14 @@ convierto en un juego de formas y colores.`,
     destacado: false,
   },
   {
-    id: "taller-creacio-3",
-    slug: "taller-creacio-3",
-    titulo: "Taller de Creació III.",
-    año: 2024,
-    obras: ["febrero", "gallo", "puerto", "ciervo", "mouton", "paseo-nocturno", "juego-a-piezas", "el-gran-principe-del-bosque", "la-flor", "puzle-paisaje", "lester", "caracol"],
-    imagenPortada: taller3,
+    id: "temus-fugit",
+    slug: "temus-fugit",
+    titulo: "Tempus Fugit",
+    año: 2023,
+    obras: ["deseo-1", "deseo-2", "deseo-3"],
+    imagenPortada: tempusFugit,
     destacado: false,
-  },
+  }
 ];
 
 export const getProyectoBySlug = (slug: string): Proyecto | undefined =>

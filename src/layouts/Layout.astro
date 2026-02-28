@@ -2,7 +2,7 @@
 import { ViewTransitions } from "astro:transitions";
 import { artista } from "../data/artista";
 import Header from "../components/layout/Header.jsx";
-import { getCategoriasOrdenadas } from "../data/categorias";
+import Footer from "../components/layout/Footer";
 import "../styles/global.css";
 
 interface Props {
@@ -16,6 +16,9 @@ const {
   description = artista.seo.description,
   type = "website",
 } = Astro.props;
+
+const pathname = Astro.url.pathname;
+const isHome = pathname === "/";
 
 ---
 

@@ -19,6 +19,7 @@ export default function ObraGaleria({ obra }: Props) {
           src={imagenes[0].src}
           alt={obra.titulo}
           className="max-h-[70vh] w-auto object-contain shadow-lg"
+          loading="lazy"
         />
       </div>
     );

@@ -90,7 +90,7 @@ export default function CategoriaGrid({ obras, obrasPorPagina = 8 }: Props) {
       </div>
 
       {/* Paginación */}
-      <div className="min-h-24 flex flex-col items-center justify-center gap-5 pt-10 border-t border-stone-200">
+      <div className="min-h-24 flex flex-col items-center justify-center gap-5 pt-10 border-stone-200">
         
         {totalPaginas > 1 && (
           <div className="flex items-center gap-3">
@@ -130,15 +130,6 @@ export default function CategoriaGrid({ obras, obrasPorPagina = 8 }: Props) {
             </button>
           </div>
         )}
-
-        <p className="text-center text-[11px] text-stone-400 tracking-[0.15em] font-light uppercase py-2">
-          {totalPaginas > 1 
-            ? `Página ${paginaActual} de ${totalPaginas} · `
-            : ""
-          }
-          {totalObras} {totalObras === 1 ? 'obra' : 'obras'}
-        </p>
-
       </div>
     </div>
   );
